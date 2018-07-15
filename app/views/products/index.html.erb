@@ -1,0 +1,21 @@
+<% provide(:title, t(".products")) %>
+
+<!-- /new_arrivals --> 
+<div class="new_arrivals_agile_w3ls_info">
+  <div class="container">
+    <h3 class="wthree_text_info">New <span>Arrivals</span></h3>
+    <div id="horizontalTab">
+      <div class="resp-tabs-container">
+        <!--/tab_one-->
+        <%#= will_paginate %>
+          <%# @products.each do |product| %>
+            <%= render @products %>
+          <%# end %>
+        <%#= will_paginate %>
+        <!--//tab_one-->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //new_arrivals --> 
+

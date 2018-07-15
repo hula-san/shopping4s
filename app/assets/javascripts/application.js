@@ -14,4 +14,13 @@
 //= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require three.min
+
 //= require_tree .
+//= require stats.min
+//= require OrbitControls
+//= require GLTFLoader
+//= require OBJLoader
+//= require Detector
+//= require dat.gui.min
+

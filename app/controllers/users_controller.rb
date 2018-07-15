@@ -14,7 +14,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = get_school.users.build user_params
+    user = User.new(user_params)
+    # user = get_school.users.build user_params
     if user.save
       user.send_activation_email
       flash[:info] = t "flash.info"
@@ -47,13 +48,13 @@ class UsersController < ApplicationController
 
   private
 
-  def get_school
-    school_name = params[:school][:name]
-    school = School.find_by name: school_name
+  # def get_school
+  #   school_name = params[:school][:name]
+  #   school = School.find_by name: school_name
 
-    school = School.create name: school_name unless school
-    school
-  end
+  #   school = School.create name: school_name unless school
+  #   school
+  # end
 
   private
 

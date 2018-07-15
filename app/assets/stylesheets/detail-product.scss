@@ -1,0 +1,84 @@
+#container {
+  height: -webkit-fill-available;
+            font-family: Monospace;
+            background-color: #f0f0f0;
+            margin: 0px;
+            overflow: hidden;
+
+        }
+
+        #product-info {
+            position: absolute;
+            top: 0px;
+            width: 100%;
+            padding: 5px;
+            font-family: Monospace;
+            font-size: 13px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        #product-viewInfo {
+          margin-top: 30px;
+            position: absolute;
+            width: 25%;
+            top: 200px;
+            right: 50px;
+            background-color: #2fdab8;
+        }
+        #product-viewInfo h1 {
+            text-align: center;
+        }
+        label {
+            color: black;
+        }
+        #product-viewInfo ul li {
+            position: relative;
+            float: left;
+            width: 60px;
+            height: 25px;
+            margin-left: 2px;
+            padding-top: 5px;
+            text-align: center;
+            color: aliceblue;
+            background-color: #000000;
+            list-style-type: none;
+        }
+        li :hover{
+            background: burlywood;
+        }
+        .product-btn btn-primary {
+            color: black;
+        }
+        /*thong tin gia, so luong dat hang*/
+        #product-infoTitle{
+            margin-left: 8%;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+        #product-numberSet{
+            margin-left: 30px;
+        }
+        /**/
+        
+        #product-infoDes{
+            margin: 8%;
+        }
+        #product-size{
+            margin: 8%;
+        }
+        #product-size h2{
+            font-size: 20px;
+            margin-bottom: 8%;
+        }
+        #product-btn {
+            width: 80px;
+            height: 40px;
+            margin: 15% 25% 20% 35%;
+            background-color: black;
+            color: white;
+        }

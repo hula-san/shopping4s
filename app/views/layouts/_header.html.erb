@@ -1,33 +1,185 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<!-- header -->
+<div class="header" id="home">
   <div class="container">
-    <%= link_to t("home.title"), root_path, class: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("home.name"), root_path %></li>
-        <li><%= link_to t("help.title"), help_path %></li>
+    <ul>
+      <li><i class="fa fa-phone" aria-hidden="true"></i>
         <% if logged_in? %>
-          <li><%= link_to t("accout.user"), users_path %></li>
-          <li class="dropdown">
-            <%= link_to "#", class: "dropdown-toggle",
-              data: {toggle: "dropdown"} do %>
-              <%= t "accout.accout" %>
-              <%= content_tag "b", "", class: "caret" %>
-            <% end %>
-            <ul class="dropdown-menu">
-              <li><%= link_to t("accout.profile"), current_user %></li>
-              <li><%= link_to t("accout.setting"), edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to t("accout.log_out"), logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to t("accout.log_in"), login_path %></li>
+          <% if current_user.admin? %>
+            <a href="upload.html">Kênh Nhà Thiết kế</a>
+          <% else %> 
+            <a href="upload.html">Chào <%= current_user.name %></a>
+          <% end %>
         <% end %>
-        <li><%= link_to t("laguage.english"), locale: :en %></li>
-        <li><%= link_to t("laguage.vietnam"), locale: :vi %></li>
-      </ul>
-    </nav>
+      </li>
+      <li></li>
+    </ul>
   </div>
-</header>
+</div>
+<!-- //header -->
+<!-- header-bot -->
+<div class="header-bot">
+  <div class="header-bot_inner_wthreeinfo_header_mid">
+    <div class="col-md-4 header-middle">
+      <form action="#" method="post">
+        <input type="search" name="search" placeholder="Search here..." required="">
+        <input type="submit" value=" ">
+        <div class="clearfix"></div>
+      </form>
+    </div>
+    <!-- header-bot -->
+    <div class="col-md-4 logo_agile">
+      <h1><a href="index.html"><span>3D</span>Shopping <i class="fa fa-shopping-bag top_logo_agile_bag" aria-hidden="true"></i></a></h1>
+    </div>
+    <!-- header-bot -->
+    <!-- <div class="col-md-4 agileits-social top_content">
+      <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+        <li class="share">Share On : </li>
+        <li>
+          <a href="#" class="facebook">
+            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="twitter">
+            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="instagram">
+            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="pinterest">
+            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+          </a>
+        </li>
+      </ul>
+    </div> -->
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- //header-bot -->
+<div class="ban-top">
+  <div class="container">
+    <div class="top_nav_left">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav menu__list">
+          <li class="active menu__item menu__item--current">
+            <%= link_to root_path, class: "menu__link" do %>
+              <%= t(".home") %>
+              <span class="sr-only">(current)</span>
+            <% end %>
+          </li>
+          <li class=" menu__item">
+            <%= link_to products_path, class: "menu__link" do %>
+              <%= t("Clothe_models_3D") %>
+            <% end %>
+          </li>
+          <li class="dropdown menu__item">
+            <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Men's wear <span class="caret"></span></a>
+              <ul class="dropdown-menu multi-column columns-3">
+                <div class="agile_inner_drop_nav_info">
+                  <div class="col-sm-6 multi-gd-img1 multi-gd-text ">
+                    <a href="mens.html"><img src="images/top2.jpg" alt=" "/></a>
+                  </div>
+                  <div class="col-sm-3 multi-gd-img">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="mens.html">Clothing</a></li>
+                      <li><a href="mens.html">Caps & Hats</a></li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-3 multi-gd-img">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="mens.html">Jewellery</a></li>
+                      <li><a href="mens.html">Swimwear</a></li>
+                    </ul>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </ul>
+          </li>
+          <% if logged_in? %>
+            <% if current_user.admin? %>
+              <li class="menu__item menu__item--current">
+                <%= link_to "#", class: "menu__link" do %>
+                  <%= t(".your_designs") %>
+                  <span class="sr-only">(current)</span>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+          <li class=" menu__item">
+            <%= link_to help_path, class: "menu__link" do %>
+              <%= t("Contact") %>
+            <% end %>    
+          </li>
+          </ul>
+        </div>
+        </div>
+      </nav>  
+    </div>
+    <div class="top_nav_right">
+      <!-- <div class="wthreecartaits wthreecartaits2 cart cart box_1"> 
+            <form action="#" method="post" class="last"> 
+            <input type="hidden" name="cmd" value="_cart">
+            <input type="hidden" name="display" value="1">
+            <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+          </form>  
+  
+            </div> -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+        <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav menu__list">
+          <% if logged_in? %>
+            <li class="menu__item dropdown">
+              <%= link_to "#", class: "menu__link dropdown-toggle",
+                data: {toggle: "dropdown"} do %>
+                <%= t "accout.accout" %>
+                <%= content_tag "b", "", class: "caret" %>
+              <% end %>
+              <ul class="dropdown-menu agile_short_dropdown">
+                <li><%= link_to t("accout.profile"), current_user %></li>
+                <li><%= link_to t("accout.setting"), edit_user_path(current_user) %></li>
+                <% if current_user.admin? %>
+                  <li>
+                    <%= link_to t("your_designs"), edit_user_path(current_user) %>
+                  </li>
+                <% end %>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to t("accout.log_out"), logout_path, method: :delete %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to login_path, class: "menu__link" do %>
+              <%= t("accout.log_in") %>
+            <% end %>
+            </li>
+          <% end %>
+          </ul>
+        </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

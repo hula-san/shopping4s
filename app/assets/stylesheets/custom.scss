@@ -1,5 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 // mixins, variables, etc. 
 
@@ -224,5 +226,15 @@ input {
     border-bottom: 1px solid $gray-lighter;
     overflow: auto;
     padding: 10px 0;
+  }
+}
+
+.log-in {
+  label.checkbox {
+    width: 100%;
+    margin-left: 25px;
+  }
+  a {
+    color: #337ab7;
   }
 }

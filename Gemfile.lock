@@ -151,6 +151,10 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.9.18)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
+    font-awesome-sass (5.0.13)
+      sassc (>= 1.11)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -308,6 +312,9 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    sassc (1.12.1)
+      ffi (~> 1.9.6)
+      sass (>= 3.3.0)
     scss_lint (0.56.0)
       rake (>= 0.9, < 13)
       sass (~> 3.5.3)
@@ -392,6 +399,8 @@ DEPENDENCIES
   eslint-rails!
   factory_girl_rails
   faker (= 1.7.3)
+  font-awesome-rails
+  font-awesome-sass (~> 5.0.6)
   guard-rspec
   jbuilder (~> 2.5)
   jquery-rails (= 4.3.1)
@@ -425,4 +434,4 @@ DEPENDENCIES
   will_paginate (= 3.1.6)
 
 BUNDLED WITH
-   1.15.4
+   1.16.1

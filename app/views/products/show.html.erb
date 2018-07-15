@@ -1,0 +1,30 @@
+<% provide(:title, "Products") %>
+<div class="clearfix"></div>
+<div id="container"></div>
+<div id="product-viewInfo">
+  <h1 id="product-nameItem"><%= @product.name %></h1>
+  <div id="product-infoTitle">
+    <label class="control-label col-sm requiredField" for="date">
+    Price :
+    <span class="asteriskField">
+    <%= @product.price %>   
+    </span>
+    <span id="nproduct-umberSet"><i class="fa fa-eye" style="font-size:16px"></i> 30</span>
+    </label>
+  </div>
+  <div id="product-infoDes">
+    <label><%= @product.des %></label>
+  </div>
+  <div id="product-size">
+    <h2>Size: </h2>
+    <ul>
+      <li id="product-s" onclick="return MenuLoadSize(this);">S</li>
+      <li id="product-m" onclick="return MenuLoadSize(this);">M</li>
+      <li id="product-l" onclick="return MenuLoadSize(this);">L</li>
+      <li id="product-other" onclick="return MenuLoadSize(this);">OTHER</li>
+    </ul>
+  </div>
+  <button id="product-btn" name="submit" type="submit">
+  Đặt may
+  </button>
+</div>

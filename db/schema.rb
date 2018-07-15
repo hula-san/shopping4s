@@ -10,13 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312063401) do
+ActiveRecord::Schema.define(version: 20180714094627) do
 
-  create_table "schools", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
+  create_table "bills", force: :cascade do |t|
+    t.datetime "date"
+    t.float "total_price"
+    t.integer "number_model"
+    t.string "des"
+    t.integer "customer_id"
+    t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_bills_on_customer_id"
+    t.index ["deleted_at"], name: "index_bills_on_deleted_at"
+  end
+
+  create_table "bookeds", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "bill_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bill_id"], name: "index_bookeds_on_bill_id"
+    t.index ["product_id"], name: "index_bookeds_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "number"
+    t.string "des"
+    t.string "picture"
+    t.integer "designer_id"
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deleted_at"], name: "index_products_on_deleted_at"
+    t.index ["designer_id"], name: "index_products_on_designer_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -25,7 +54,6 @@ ActiveRecord::Schema.define(version: 20180312063401) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.integer "school_id"
     t.date "dob"
     t.string "remember_digest"
     t.boolean "admin", default: false
@@ -34,8 +62,10 @@ ActiveRecord::Schema.define(version: 20180312063401) do
     t.datetime "activated_at"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
+    t.float "chieu_cao"
+    t.float "can_nang"
+    t.float "tuoi"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["school_id"], name: "index_users_on_school_id"
   end
 
 end

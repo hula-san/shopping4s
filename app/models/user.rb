@@ -1,13 +1,11 @@
 class User < ApplicationRecord
-  ATTR = %i(name email password password_confirmation school_id)
+  ATTR = %i(name email password password_confirmation)
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   include SessionsHelper
 
   attr_reader :remember_token, :activation_token, :reset_token
-
-  belongs_to :school
 
   has_secure_password
 
@@ -27,6 +25,9 @@ class User < ApplicationRecord
   before_save :email_downcase
 
   scope :activated, ->{where activated: true}
+
+  has_many :bills, foreign_key: "customer_id", class_name: Bill.name
+  has_many :products, foreign_key: "designer_id", class_name: Product.name
 
   def current_user? user
     self == user

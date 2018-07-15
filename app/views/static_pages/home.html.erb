@@ -1,10 +1,12 @@
+<%= render "layouts/banner" %>
 <% provide :title, t("home.title") %>
-<div class="center jumbotron">
-  <h1><%= t "home.title" %></h1>
-  <h2>
-    <%= t "home.content_1" %> <%= link_to t("home.content_2"), "http://www.railstutorial.org/"%> <%= t "home.content_3" %>
-  </h2>
-  <%= link_to t("home.signup"), signup_path, class: "btn btn-lg btn-primary" %>
+<div class="new_arrivals_agile_w3ls_info">
+  <div class="container">
+    <h3 class="wthree_text_info">New <span>Arrivals</span></h3>
+    <div id="horizontalTab">
+      <div class="resp-tabs-container">
+				<%= render @products %>
+      </div>
+    </div>
+  </div>
 </div>
-<%= link_to image_tag("rails.png", alt: "Rails logo"), "http://rubyonrails.org/" %>
-
